@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Rajkumar Wood Carving - Handmade wooden art, traditional designs and custom carving.">
+<title>Rajkumar Wood Carving | Handmade Wooden Art</title>
+<style>
+:root {
+  --brown:#422518;
+  --gold:#dca64c;
+  --cream:#fff6e8;
+  --dark:#20140f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+}
+header{
+  background:linear-gradient(120deg,#25130b,#774321,#bd853d);
+  color:white;
+  padding:16px 5%;
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:12px;
+  box-shadow:0 3px 15px #0004;
+}
+.logo{font-size:21px;font-weight:bold;color:#ffda8b}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#ffd47a}
+.hero{
+  min-height:520px;
+  background:linear-gradient(#1b100a99,#1b100a99),
+  url('https://images.unsplash.com/photo-1604578762246-41134e37f9cc?w=1500');
+  background-size:cover;background-position:center;
+  color:white;text-align:center;
+  display:flex;align-items:center;justify-content:center;
+  padding:60px 20px;
+}
+.hero h1{
+  font-size:clamp(35px,7vw,65px);
+  color:#ffcf79;margin-bottom:20px;
+  animation:fade 1.3s ease;
+}
+.hero p{font-size:19px;line-height:1.8}
+@keyframes fade{
+ from{opacity:0;transform:translateY(25px)}
+ to{opacity:1;transform:translateY(0)}
+}
+.btn{
+ display:inline-block;padding:13px 22px;
+ border:0;border-radius:30px;
+ background:linear-gradient(120deg,#b66a24,#edbd65);
+ color:#281508;text-decoration:none;
+ font-weight:bold;cursor:pointer;margin:10px 5px;
+ transition:.3s;
+}
+.btn:hover{transform:translateY(-4px);box-shadow:0 8px 20px #0003}
+section{padding:65px 5%;scroll-margin-top:90px}
+.heading{text-align:center;margin-bottom:35px}
+.heading h2{font-size:32px;color:#774321}
+.heading p{margin-top:10px;color:#795f49}
+.about{
+ max-width:850px;margin:auto;text-align:center;
+ line-height:1.9;font-size:17px;
+}
+.cards{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:22px;
+}
+.card{
+ background:white;border-radius:16px;
+ overflow:hidden;box-shadow:0 5px 20px #53301620;
+ transition:.3s;
+}
+.card:hover{transform:translateY(-7px)}
+.card img{
+ width:100%;height:220px;object-fit:cover;
+ cursor:pointer;
+}
+.card-content{padding:18px}
+.card h3{color:#774321;margin-bottom:9px}
+.card p{color:#68574b;line-height:1.6}
+.design-links{
+ display:flex;justify-content:center;
+ flex-wrap:wrap;gap:12px;
+}
+.design-links a{
+ padding:13px 18px;background:white;
+ border:1px solid #d6b17e;border-radius:25px;
+ color:#633d20;text-decoration:none;
+}
+.design-links a:hover{background:#f0d3a8}
+form{
+ max-width:600px;margin:auto;
+ background:white;padding:25px;
+ border-radius:16px;box-shadow:0 5px 20px #0001;
+}
+input,textarea,select{
+ width:100%;padding:13px;margin:9px 0;
+ border:1px solid #d8c2a6;border-radius:8px;
+ font-size:15px;
+}
+textarea{min-height:100px}
+footer{
+ background:#24150e;color:#fff;
+ text-align:center;padding:35px 15px;line-height:2;
+}
+.wa{
+ position:fixed;right:18px;bottom:20px;
+ background:#20c66b;color:white;
+ width:58px;height:58px;border-radius:50%;
+ display:flex;align-items:center;justify-content:center;
+ text-decoration:none;font-size:28px;
+ z-index:30;box-shadow:0 4px 15px #0004;
+ animation:pulse 2s infinite;
+}
+@keyframes pulse{
+ 50%{box-shadow:0 0 0 12px #20c66b22}
+}
+.admin-box{display:none}
+.admin-item{
+ background:white;padding:14px;border-radius:10px;
+ margin:10px 0;display:flex;gap:10px;
+ justify-content:space-between;align-items:center;flex-wrap:wrap;
+}
+.small{font-size:13px;color:#777}
+#viewer{
+ display:none;position:fixed;inset:0;
+ background:#000e;z-index:100;
+ align-items:center;justify-content:center;padding:15px;
+}
+#viewer img{max-width:100%;max-height:85vh;object-fit:contain}
+#viewer button{
+ position:absolute;top:20px;right:20px;
+ padding:10px 18px;border:0;border-radius:10px;
+}
+@media(max-width:600px){
+ header{justify-content:center}
+ nav{justify-content:center;gap:12px}
+ nav a{font-size:12px}
+ .hero{min-height:450px}
+ section{padding:48px 5%}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="logo">♛ RAJKUMAR WOOD CARVING</div>
+ <nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#designs">Designs</a>
+  <a href="#contact">Contact</a>
+  <a href="#admin">Admin</a>
+ </nav>
+</header>
+
+<div class="hero" id="home">
+ <div>
+  <h1>RAJKUMAR<br>WOOD CARVING</h1>
+  <p>Turning Wood into Beautiful Art</p>
+  <p>Traditional Craftsmanship | Handmade Designs</p>
+  <a class="btn" href="#gallery">Explore Gallery</a>
+  <a class="btn" href="#contact">Custom Order</a>
+ </div>
+</div>
+
+<section id="about">
+ <div class="heading">
+  <h2>About Our Art</h2>
+  <p>Traditional skill, beautiful craftsmanship</p>
+ </div>
+ <div class="about">
+  <p>Welcome to Rajkumar Wood Carving. We present beautiful
+  handmade wooden carving designs and artistic craftsmanship.</p>
+  <p><b>Main Residence:</b> Panduwa, Bara, Prayagraj,
+  Uttar Pradesh, India.</p>
+  <p><b>Current Working Location:</b> Kalyan,
+  Ulhasnagar No. 2, Maharashtra, India.</p>
+  <p>Contact us for your custom wood carving requirements.</p>
+ </div>
+</section>
+
+<section id="services">
+ <div class="heading">
+  <h2>Our Services</h2>
+  <p>Creative wooden art and custom designs</p>
+ </div>
+ <div class="cards">
+  <div class="card"><div class="card-content">
+   <h3>Wooden Doors</h3><p>Traditional and decorative door carving designs.</p>
+  </div></div>
+  <div class="card"><div class="card-content">
+   <h3>Wooden Mandir</h3><p>Beautiful handmade temple carving.</p>
+  </div></div>
+  <div class="card"><div class="card-content">
+   <h3>Wall Panels</h3><p>Artistic wooden wall panels and decorations.</p>
+  </div></div>
+  <div class="card"><div class="card-content">
+   <h3>Custom Designs</h3><p>Custom wood carving as per customer requirements.</p>
+  </div></div>
+ </div>
+ <div id="dynamicServices" class="cards" style="margin-top:20px"></div>
+</section>
+
+<section id="gallery">
+ <div class="heading">
+  <h2>Our Wood Carving Gallery</h2>
+  <p>Explore beautiful wooden art</p>
+ </div>
+ <div class="cards" id="galleryGrid">
+  <p>Loading gallery...</p>
+ </div>
+ <div style="text-align:center;margin-top:25px">
+  <a class="btn" target="_blank" rel="noopener"
+   href="https://www.google.com/search?tbm=isch&q=Indian+wood+carving+designs">
+   Explore Online Wood Carving Images ↗
+  </a>
+ </div>
+</section>
+
+<section id="designs">
+ <div class="heading">
+  <h2>Explore Designs Online</h2>
+  <p>Click a category to view more images</p>
+ </div>
+ <div class="design-links">
+  <a target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&q=wooden+door+carving">Wooden Doors</a>
+  <a target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&q=wooden+mandir+carving">Wooden Mandir</a>
+  <a target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&q=wood+wall+panel+carving">Wall Panels</a>
+  <a target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&q=floral+wood+carving">Floral Designs</a>
+  <a target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&q=hand+carved+wooden+furniture">Furniture</a>
+  <a target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&q=traditional+Indian+wood+carving">Traditional Art</a>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="heading">
+  <h2>Contact & Custom Order</h2>
+  <p>Tell us what design you need</p>
+ </div>
+ <form id="enquiryForm">
+  <input name="name" placeholder="Your Name" required maxlength="100">
+  <input name="phone" placeholder="Mobile Number (10 digits)" required pattern="[0-9]{10}" maxlength="10">
+  <input name="design" placeholder="Which Wood Carving Design?" required maxlength="150">
+  <textarea name="message" placeholder="Describe your requirement"></textarea>
+  <button class="btn" type="submit">Submit Enquiry</button>
+  <p id="formMessage"></p>
+ </form>
+ <div style="text-align:center;margin-top:20px">
+  <a class="btn" target="_blank" rel="noopener"
+   href="https://wa.me/918080305667?text=Hello%20Rajkumar%20Ji%2C%20I%20am%20interested%20in%20wood%20carving.">
+   WhatsApp: 8080305667
+  </a>
+ </div>
+</section>
+
+<section id="admin">
+ <div class="heading">
+  <h2>Admin Dashboard</h2>
+  <p>Manage your business website</p>
+ </div>
+ <div id="loginBox">
+  <form id="loginForm">
+   <h3>Admin Login</h3>
+   <input name="email" type="email" placeholder="Admin Email" required>
+   <input name="password" type="password" placeholder="Admin Password" required>
+   <button class="btn">Login</button>
+   <p id="loginMessage"></p>
+  </form>
+ </div>
+
+ <div id="adminPanel" class="admin-box">
+  <div style="text-align:center">
+   <h3>Welcome Admin</h3>
+   <button class="btn" onclick="logout()">Logout</button>
+  </div>
+
+  <form id="galleryForm">
+   <h3>Add Gallery Image</h3>
+   <input name="title" placeholder="Image Title" required>
+   <input name="category" placeholder="Category">
+   <input name="image_url" type="url" placeholder="HTTPS Image URL" required>
+   <button class="btn">Add Image</button>
+   <p class="small">Use a publicly accessible HTTPS image URL.</p>
+  </form>
+
+  <div id="adminGallery"></div>
+
+  <form id="serviceForm">
+   <h3>Add New Service</h3>
+   <input name="title" placeholder="Service Name" required>
+   <textarea name="description" placeholder="Service Description"></textarea>
+   <button class="btn">Add Service</button>
+  </form>
+
+  <div id="adminServices"></div>
+  <div id="adminEnquiries"></div>
+ </div>
+</section>
+
+<footer>
+ <h2>RAJKUMAR WOOD CARVING</h2>
+ <p>Turning Wood into Beautiful Art</p>
+ <p>Main Residence: Panduwa, Bara, Prayagraj, Uttar Pradesh</p>
+ <p>Current Work: Kalyan, Ulhasnagar No. 2, Maharashtra</p>
+ <p>WhatsApp: 8080305667</p>
+ <p>© 2026 Rajkumar Wood Carving. All Rights Reserved.</p>
+</footer>
+
+<a class="wa" target="_blank" rel="noopener"
+ href="https://wa.me/918080305667" aria-label="WhatsApp">✆</a>
+
+<div id="viewer" onclick="closeViewer()">
+ <button>Close ✕</button>
+ <img id="viewerImage" alt="Wood carving preview">
+</div>
+
+<script>
+const API = "/api";
+let token = localStorage.getItem("rwc_admin_token") || "";
+
+async function api(url, options={}) {
+ const headers = {...(options.headers || {})};
+ if (token) headers.Authorization = "Bearer " + token;
+ if (options.body) headers["Content-Type"] = "application/json";
+
+ const response = await fetch(API + url, {...options, headers});
+ const data = await response.json().catch(()=>({}));
+ if (!response.ok) throw new Error(data.error || "Request failed");
+ return data;
+}
+
+function showImage(url) {
+ document.getElementById("viewerImage").src = url;
+ document.getElementById("viewer").style.display = "flex";
+}
+function closeViewer() {
+ document.getElementById("viewer").style.display = "none";
+}
+document.getElementById("viewerImage").onclick=e=>e.stopPropagation();
+
+async function loadGallery() {
+ const grid = document.getElementById("galleryGrid");
+ try {
+  const items = await api("/gallery");
+  grid.innerHTML = "";
+  if (!items.length) {
+   grid.innerHTML = "<p>Gallery is ready. Admin can add images.</p>";
+   return;
+  }
+  items.forEach(item=>{
+   const card=document.createElement("div");
+   card.className="card";
+   const img=document.createElement("img");
+   img.src=item.image_url;
+   img.alt=item.title;
+   img.loading="lazy";
+   img.onclick=()=>showImage(item.image_url);
+   const content=document.createElement("div");
+   content.className="card-content";
+   const title=document.createElement("h3");
+   title.textContent=item.title;
+   const category=document.createElement("p");
+   category.textContent=item.category;
+   content.append(title,category);
+   card.append(img,content);
+   grid.append(card);
+  });
+ } catch {
+  grid.textContent="Gallery could not load.";
+ }
+}
+
+async function loadServices() {
+ try {
+  const items=await api("/services");
+  const box=document.getElementById("dynamicServices");
+  box.innerHTML="";
+  items.forEach(item=>{
+   const card=document.createElement("div");
+   card.className="card card-content";
+   const h=document.createElement("h3");
+   h.textContent=item.title;
+   const p=document.createElement("p");
+   p.textContent=item.description;
+   card.append(h,p);
+   box.append(card);
+  });
+ } catch {}
+}
+
+document.getElementById("enquiryForm").onsubmit=async e=>{
+ e.preventDefault();
+ const form=e.target;
+ const message=document.getElementById("formMessage");
+ const data=Object.fromEntries(new FormData(form));
+ try {
+  await api("/enquiries",{
+   method:"POST",body:JSON.stringify(data)
+  });
+  message.textContent="Thank you! Your enquiry has been submitted.";
+  message.style.color="green";
+  form.reset();
+ } catch(err) {
+  message.textContent=err.message;
+  message.style.color="red";
+ }
+};
+
+function updateAdminUI() {
+ document.getElementById("loginBox").style.display=token?"none":"block";
+ document.getElementById("adminPanel").style.display=token?"block":"none";
+}
+
+document.getElementById("loginForm").onsubmit=async e=>{
+ e.preventDefault();
+ const data=Object.fromEntries(new FormData(e.target));
+ try {
+  const result=await api("/login",{
+   method:"POST",body:JSON.stringify(data)
+  });
+  token=result.token;
+  localStorage.setItem("rwc_admin_token",token);
+  updateAdminUI();
+  await loadAdmin();
+ } catch(err) {
+  document.getElementById("loginMessage").textContent=err.message;
+ }
+};
+
+function logout() {
+ token="";
+ localStorage.removeItem("rwc_admin_token");
+ updateAdminUI();
+}
+
+document.getElementById("galleryForm").onsubmit=async e=>{
+ e.preventDefault();
+ const data=Object.fromEntries(new FormData(e.target));
+ try {
+  await api("/gallery",{
+   method:"POST",body:JSON.stringify(data)
+  });
+  e.target.reset();
+  await loadGallery();
+  await loadAdmin();
+  alert("Image added successfully");
+ } catch(err) { alert(err.message); }
+};
+
+document.getElementById("serviceForm").onsubmit=async e=>{
+ e.preventDefault();
+ const data=Object.fromEntries(new FormData(e.target));
+ try {
+  await api("/services",{
+   method:"POST",body:JSON.stringify(data)
+  });
+  e.target.reset();
+  await loadServices();
+  await loadAdmin();
+  alert("Service added");
+ } catch(err) { alert(err.message); }
+};
+
+async function loadAdmin() {
+ try {
+  const gallery=await api("/gallery");
+  const box=document.getElementById("adminGallery");
+  box.innerHTML="<h3>Manage Gallery</h3>";
+  gallery.forEach(item=>{
+   const row=document.createElement("div");
+   row.className="admin-item";
+   const title=document.createElement("span");
+   title.textContent=item.title;
+   const btn=document.createElement("button");
+   btn.className="btn";
+   btn.textContent="Delete";
+   btn.onclick=async()=>{
+    if(!confirm("Delete this image?")) return;
+    try {
+     await api("/gallery/"+item.id,{method:"DELETE"});
+     await loadGallery();
+     await loadAdmin();
+    } catch(err) { alert(err.message); }
+   };
+   row.append(title,btn);
+   box.append(row);
+  });
+
+  const services=await api("/services");
+  const serviceBox=document.getElementById("adminServices");
+  serviceBox.innerHTML="<h3>Manage Services</h3>";
+  services.forEach(item=>{
+   const row=document.createElement("div");
+   row.className="admin-item";
+   const title=document.createElement("span");
+   title.textContent=item.title;
+   const btn=document.createElement("button");
+   btn.className="btn";
+   btn.textContent="Delete";
+   btn.onclick=async()=>{
+    if(!confirm("Delete service?")) return;
+    try {
+     await api("/services/"+item.id,{method:"DELETE"});
+     await loadServices();
+     await loadAdmin();
+    } catch(err) { alert(err.message); }
+   };
+   row.append(title,btn);
+   serviceBox.append(row);
+  });
+
+  const enquiries=await api("/enquiries");
+  const enquiryBox=document.getElementById("adminEnquiries");
+  enquiryBox.innerHTML="<h3>Customer Enquiries ("+enquiries.length+")</h3>";
+  enquiries.forEach(item=>{
+   const row=document.createElement("div");
+   row.className="admin-item";
+   const info=document.createElement("div");
+   const name=document.createElement("b");
+   name.textContent=item.name+" - "+item.phone;
+   const details=document.createElement("p");
+   details.textContent=item.design+" | "+(item.message||"");
+   info.append(name,details);
+   row.append(info);
+   enquiryBox.append(row);
+  });
+ } catch(err) {
+  if(err.message.toLowerCase().includes("login") ||
+     err.message.toLowerCase().includes("expired")) logout();
+  else alert(err.message);
+ }
+}
+
+updateAdminUI();
+loadGallery();
+loadServices();
+
+if(token) loadAdmin();
+</script>
+</body>
+</html>
